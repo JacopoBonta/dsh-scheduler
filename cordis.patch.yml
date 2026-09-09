@@ -9,6 +9,9 @@
         refreshMs: 30000
         # Default per-job timeout (ms) when the job doesn't declare one.
         defaultTimeoutMs: 900000
+        # Fire the most recent run missed while the process was down or the
+        # machine slept (anacron-style, once per job, 24h lookback).
+        catchUpOnStart: true
         # Optional: one-time import from legacy scheduler stores when this
         # plugin's own store is empty (never overwrites existing names).
         # importFrom:

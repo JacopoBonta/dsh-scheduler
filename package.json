@@ -1,0 +1,44 @@
+{
+  "name": "dsh-scheduler",
+  "description": "dsh-scheduler — cron scheduler plugin for DeepSeek Harness: persists cron jobs to a JSON store, fires them through the harness shell while the process runs, and serves a Cron jobs sidebar entry (below New Session) with a management overlay plus a `scheduler` model tool.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "client": {
+      "inject": [
+        "slots"
+      ],
+      "platform": "web"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacopoBonta/dsh-scheduler.git"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cron",
+    "scheduler",
+    "cordis"
+  ]
+}

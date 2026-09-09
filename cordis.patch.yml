@@ -1,0 +1,15 @@
+# dsh-scheduler bundle patch — the layer applied when a profile lists this bundle.
+# Installed via: dsh plugin --profile web add JacopoBonta/dsh-scheduler
+- insert:
+    - id: dsh-scheduler
+      name: dsh-scheduler
+      config:
+        # Minutes between cron ticks (the engine fires jobs whose minute
+        # matches, guarded by lastFiredMinute so one match fires once).
+        refreshMs: 30000
+        # Default per-job timeout (ms) when the job doesn't declare one.
+        defaultTimeoutMs: 900000
+        # Optional: one-time import from legacy scheduler stores when this
+        # plugin's own store is empty (never overwrites existing names).
+        # importFrom:
+        #   - /Users/you/workspace/live-portfolio/.dsh-scheduler/jobs.json

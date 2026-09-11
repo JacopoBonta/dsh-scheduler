@@ -12,7 +12,19 @@
         # Fire the most recent run missed while the process was down or the
         # machine slept (anacron-style, once per job, 24h lookback).
         catchUpOnStart: true
+        # Agent-invocation session composition (agent jobs only; both presets
+        # are shipped). Override per job or here.
+        defaultAgentPreset: standard
+        defaultPermissionPreset: workspace-write
         # Optional: one-time import from legacy scheduler stores when this
         # plugin's own store is empty (never overwrites existing names).
         # importFrom:
         #   - /Users/you/workspace/live-portfolio/.dsh-scheduler/jobs.json
+
+# Scheduled agent invocations need the harness webhook runtime: uncomment this
+# overlay row (the shipped CLI already contains @deepseek-ai/dsh-webhook; the
+# row alone activates it) and restart dsh web. Without it, agent-job add fails
+# with an actionable error and shell jobs are untouched.
+# - insert:
+#     - id: webhook-runtime
+#       name: '@deepseek-ai/dsh-webhook'

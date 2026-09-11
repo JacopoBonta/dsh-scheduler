@@ -1,7 +1,7 @@
 {
   "name": "dsh-scheduler",
-  "description": "dsh-scheduler — cron scheduler plugin for DeepSeek Harness: persists cron jobs to a JSON store, fires them through the harness shell while the process runs, and serves a Cron jobs sidebar entry (below New Session) with a management overlay plus a `scheduler` model tool.",
-  "version": "0.2.0",
+  "description": "dsh-scheduler — cron scheduler plugin for DeepSeek Harness: persists cron jobs to a JSON store, fires shell jobs through the harness shell and agent jobs as fresh root sessions through the harness webhook runtime while the process runs, and serves a Cron jobs sidebar entry (below New Session) with a management overlay plus a `scheduler` model tool.",
+  "version": "0.3.0",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
